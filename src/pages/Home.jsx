@@ -1,14 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
-import {useTranslation} from "react-i18next";
-import LanguageSwitcher from "../components/LanguageSwitcher/LanguageSwitcher.jsx";
+import {baseUrl} from "../utils/Const.jsx";
+import Header from "../components/Header/Header.jsx";
+import Footer from "../components/Footer/Footer.jsx";
 
 const HomePage = () => {
     const navigate = useNavigate();
     const [playerName, setPlayerName] = useState('');
     const [stats, setStats] = useState(null);
-
-    const {t} = useTranslation();
 
     useEffect(() => {
         const storedStats = localStorage.getItem('monopolyStats');
@@ -34,33 +33,30 @@ const HomePage = () => {
             JSON.stringify({[playerName]: playerStats})
         );
 
-        navigate('/game', {state: {playerName}});
+        navigate(baseUrl + '/game', {state: {playerName}});
     };
 
     return (
         <div
             className="min-h-screen bg-cover bg-center flex flex-col"
             style={{
-                backgroundImage: "url('/images/monopoly-background.jpg')",
+                backgroundImage: `url(${baseUrl}/bg.png)`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                transition: 'background-color 0.5s ease',
+                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                filter: 'blur(0px)',
+                backdropFilter: 'blur(5px)',
+                WebkitBackdropFilter: 'blur(5px)',
+                backgroundBlendMode: 'overlay',
             }}
         >
-            <div className="bg-black bg-opacity-50 flex flex-col flex-grow">
-                <header className="flex justify-between items-center p-6 bg-white bg-opacity-80 shadow-md">
-                    <h1 className="text-3xl font-bold text-gray-800">Monopoly</h1>
-                    <button
-                        onClick={() => navigate('/about')}
-                        className="text-blue-600 hover:underline"
-                    >
-                        Crédits
-                    </button>
+            <div className=" flex flex-col flex-grow">
+                <Header/>
 
-                    <LanguageSwitcher />
-                </header>
-
-                {/* Main Content */}
                 <main className="flex-grow flex flex-col items-center justify-center p-6">
                     <h2 className="text-5xl font-bold text-white mb-6 animate-bounce">
-                        {t('welcome')}
+                        Welcome
                     </h2>
                     <input
                         type="text"
@@ -69,12 +65,20 @@ const HomePage = () => {
                         onChange={(e) => setPlayerName(e.target.value)}
                         className="px-4 py-2 rounded shadow-md text-lg mb-4"
                     />
-                    <button
-                        onClick={handleStartGame}
-                        className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded text-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105"
-                    >
-                        Jouer
-                    </button>
+                    <div className="flex flex-row gap-2">
+                        <button
+                            onClick={() => navigate(baseUrl + '/stats')}
+                            className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded text-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105"
+                        >
+                            Statistiques
+                        </button>
+                        <button
+                            onClick={handleStartGame}
+                            className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded text-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105"
+                        >
+                            Jouer
+                        </button>
+                    </div>
 
                     {stats && stats[playerName] && (
                         <div className="mt-8 bg-white bg-opacity-90 p-4 rounded shadow-md w-full max-w-md">
@@ -92,15 +96,7 @@ const HomePage = () => {
                     )}
                 </main>
 
-                <footer className="bg-white bg-opacity-80 text-center py-4 shadow-inner">
-                    <p className="text-gray-600">
-                        &copy; {new Date().getFullYear()} Monopoly - Tous droits réservés
-                    </p>
-                    <p className="text-gray-600">
-                        Développé par <a href="https://github.com/achedon12"
-                                         className="text-blue-600 hover:underline">Achedon12</a>
-                    </p>
-                </footer>
+                <Footer/>
             </div>
         </div>
     );
