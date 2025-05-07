@@ -1,0 +1,17 @@
+{
+  "Alice": {
+    "gamesPlayed": 10,
+    "gamesWon": 6,
+    "totalMoneyEarned": 3000
+  },
+  "Bob": {
+    "gamesPlayed": 8,
+    "gamesWon": 5,
+    "totalMoneyEarned": 2500
+  },
+  "Charlie": {
+    "gamesPlayed": 12,
+    "gamesWon": 7,
+    "totalMoneyEarned": 4000
+  }
+}
