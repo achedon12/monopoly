@@ -2,13 +2,17 @@
 
 ![Monopoly Logo](public/icon.png)
 
-Play the classic board game Monopoly in a digital format! This project is a web-based implementation of the iconic Monopoly game, built with React and Docker.
+Play the classic board game Monopoly in a digital format! This project is a web-based implementation of the iconic
+Monopoly game, built with React and Docker.
 
 ---
 
 ## 📊 Badges
 
-<p>
+<p align="center">
+  <a href="https://github.com/achedon12/monopoly">
+    <img src="https://hitscounter.dev/api/hit?url=http%3A%2F%2Fgithub.com%2Fachedon12%2Fmonopoly%2F&label=visitors&icon=eyeglasses&color=%234ab8ff" alt="Visitors">
+  </a>
   <a href="https://github.com/achedon12/monopoly">
     <img src="https://img.shields.io/github/repo-size/achedon12/monopoly?style=for-the-badge" alt="Repo Size">
   </a>
@@ -45,13 +49,19 @@ Play the classic board game Monopoly in a digital format! This project is a web-
 
 ## 📜 Description
 
-This project is a digital adaptation of the iconic Monopoly game, allowing players to engage in a fun and interactive experience. The game features a user-friendly interface, real-time gameplay mechanics, and a responsive design that works seamlessly across various devices.
+This project is a digital adaptation of the iconic Monopoly game, allowing players to engage in a fun and interactive
+experience. The game features a user-friendly interface, real-time gameplay mechanics, and a responsive design that
+works seamlessly across various devices.
 
-The game is designed to be played by multiple players, where they can roll dice, buy properties, and manage their assets. The project utilizes modern web technologies to ensure a smooth and enjoyable gaming experience.
+The game is designed to be played by multiple players, where they can roll dice, buy properties, and manage their
+assets. The project utilizes modern web technologies to ensure a smooth and enjoyable gaming experience.
 
-The game is built with a focus on modularity and maintainability, making it easy to extend and add new features in the future.
+The game is built with a focus on modularity and maintainability, making it easy to extend and add new features in the
+future.
 
-The project is structured to follow best practices in React development, utilizing components for the game board, player management, and game logic. The use of Docker allows for easy setup and deployment, ensuring that the development environment is consistent across different machines.
+The project is structured to follow best practices in React development, utilizing components for the game board, player
+management, and game logic. The use of Docker allows for easy setup and deployment, ensuring that the development
+environment is consistent across different machines.
 
 ---
 
