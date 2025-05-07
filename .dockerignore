@@ -1,5 +1,11 @@
 .idea
 node_modules
+dist
+.git
+.gitignore
+Dockerfile
+docker-compose.yml
+.env
 npm-debug.log
 yarn-error.log
 package-lock.json
